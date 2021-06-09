@@ -6,26 +6,12 @@
 # p item1[:type].capitalize
 
 class Store
+  attr_reader :type, :color, :price
+  attr_writer :price
   def initialize(type, color, price)
     @type = type
     @color = color
     @price = price
-  end
-
-  def type
-    @type
-  end
-
-  def color
-    @color
-  end
-
-  def price
-    @price
-  end
-
-  def price=(price_increase)
-    @price = price_increase
   end
 
   def info
