@@ -24,6 +24,10 @@ class Store
     @price
   end
 
+  def price=(price_increase)
+    @price = price_increase
+  end
+
   def info
     puts "This #{color} #{type} costs $#{price}."
   end
@@ -36,3 +40,6 @@ item3 = Store.new("basketball", "orange", 30)
 item1.info
 item2.info
 item3.info
+
+item3.price = 40
+puts item3.info
