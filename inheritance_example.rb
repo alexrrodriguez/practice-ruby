@@ -15,26 +15,17 @@ class Vehicle
   def turn(new_direction)
     @direction = new_direction
   end
+
 end
 
 
 class Car < Vehicle
-  # def initialize
-  #   @speed = 0
-  #   @direction = 'north'
-  # end
-
-  # def brake
-  #   @speed = 0
-  # end
-
-  # def accelerate
-  #   @speed += 10
-  # end
-
-  # def turn(new_direction)
-  #   @direction = new_direction
-  # end
+  def initialize
+    super
+    @make = "Honda"
+    @model = "Civic"
+    @color = "blue"
+  end
 
   def honk_horn
     puts "Beeeeeeep!"
@@ -42,34 +33,22 @@ class Car < Vehicle
 end
 
 class Bike < Vehicle
-  # def initialize
-  #   @speed = 0
-  #   @direction = 'north'
-  # end
-
-  # def brake
-  #   @speed = 0
-  # end
-
-  # def accelerate
-  #   @speed += 10
-  # end
-
-  # def turn(new_direction)
-  #   @direction = new_direction
-  # end
+  def initialize
+    super
+    @type = "Schwinn"
+    @weight = 20
+  end
 
   def ring_bell
     puts "Ring ring!"
   end
+
 end
 
 
 
 
-car = Car.new
-bike = Bike.new
-car.accelerate
-bike.accelerate
-car.honk_horn
-bike.ring_bell
+car = Car.new(make: "Ferrari", mode: "F8 Spider")
+bike = Bike.new(type: "Schwinn", weight: 50)
+car.info
+bike.info
