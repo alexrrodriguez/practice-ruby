@@ -8,10 +8,10 @@
 class Store
   attr_reader :type, :color, :price
   attr_writer :price
-  def initialize(type, color, price)
-    @type = type
-    @color = color
-    @price = price
+  def initialize(input_options)
+    @type = input_options[:type]
+    @color = input_options[:color]
+    @price = input_options[:price]
   end
 
   def info
@@ -20,9 +20,9 @@ class Store
 
 end
 
-item1 = Store.new("crayon", "blue", 10)
-item2 = Store.new("notebook", "red", 20)
-item3 = Store.new("basketball", "orange", 30)
+item1 = Store.new(type: "crayon", color: "blue", price: 10)
+item2 = Store.new(type: "notebook", color: "red", price: 20)
+item3 = Store.new(type: "basketball", color: "orange", price: 30)
 item1.info
 item2.info
 item3.info
