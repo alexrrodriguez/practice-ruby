@@ -30,6 +30,10 @@ class Car < Vehicle
   def honk_horn
     puts "Beeeeeeep!"
   end
+
+  def info
+    puts "this #{@make} #{@model} is #{@color} and is going #{@speed} MPH #{@direction}."
+  end
 end
 
 class Bike < Vehicle
@@ -43,12 +47,16 @@ class Bike < Vehicle
     puts "Ring ring!"
   end
 
+  def info
+    puts "this #{@type} weighs #{@weight} and is heading #{@speed} mph #{@direction}"
+  end
+
 end
 
 
 
 
-car = Car.new(make: "Ferrari", mode: "F8 Spider")
-bike = Bike.new(type: "Schwinn", weight: 50)
-car.info
-bike.info
+car = Car.new
+bike = Bike.new
+puts car.info
+puts bike.info
